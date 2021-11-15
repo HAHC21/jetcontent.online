@@ -1,3 +1,10 @@
 from django.contrib import admin
 
-# Register your models here.
+from core.models import *
+
+
+class SiteAdmin(admin.ModelAdmin):
+    list_display = ('name', 'prefix')
+
+
+admin.site.register(Site, SiteAdmin)

@@ -2,7 +2,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>JetContent</title>
+    <title>JetContent - Show</title>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -20,16 +20,8 @@
 <body>
 <main class="container-fluid">
     <section class="jc-sites-wrapper">
-        <h2>Sites</h2>
-        <section class="jc-sites-wrapper__site">
-            {% for site in sites %}
-                <a href="{% url 'site' site.id  %}">
-                <div class="jc-sites-wrapper__site__wrapper">
-                    <img src="{{ site.logo.url }}" alt="">
-                </div>
-                </a>
-            {% endfor %}
-        </section>
+        <h2>Site: {{ site.name }}</h2>
+        {{ site }}
     </section>
 </main>
 </body>

@@ -6,6 +6,7 @@ class Site(models.Model):
     Sites
     """
     name = models.CharField(max_length=150, verbose_name="Name", unique=True)
+    prefix = models.CharField(max_length=4, verbose_name="Prefix", unique=True, blank=True, null=True)
     logo = models.ImageField(upload_to='sites/%Y/%m/%d', null=True, blank=True)
     url = models.CharField(max_length=150, verbose_name="URL")
 
