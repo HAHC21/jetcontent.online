@@ -3,13 +3,18 @@ body, html {
 }
 
 body {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Barlow', sans-serif;
     font-size: 14px;
     font-weight: 400;
 }
 
+.jc-header-wrapper {
+    height: 100px;
+    width: 100%;
+    background: #1a1e21;
+}
+
 .jc-sites-wrapper {
-    margin-top: 30px;
     width: 60%;
     height: 100%;
     margin: 20px auto;
