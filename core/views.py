@@ -1,9 +1,9 @@
 from django.shortcuts import render
+from django.shortcuts import redirect
+from core.models import Site, Article
 
-from core.models import Site
 import requests
 from requests.exceptions import HTTPError
-
 
 def index(request):
     data = {
@@ -14,65 +14,34 @@ def index(request):
 
 def show(request, id):
     site = Site.objects.filter(id=id).first()
-
     data = {
-        'site': Site.objects.filter(id=id).first()
+        'articles': Article.objects.filter(site_id=site.id).all(),
+        'site': site
     }
 
-    category_global = {}
-    tag_global = {}
+    return render(request, 'show.html', data)
+
+
+def article(request, id):
+    return render(request, 'article.html')
+
+
+def import_posts(request, id):
 
     try:
-        response = requests.get(
-            site.url + "/wp-json/wp/v2/posts", params={
-                'per_page': 100
-            },
+        response = requests.post(
+            "http://192.168.1.10:3000/import-posts",
+            data={'id': id},
             headers={'Content-Type': 'application/json'}
         )
         response.raise_for_status()
     except HTTPError as http_err:
         print(f'HTTP error occurred: {http_err}')
+        return redirect(request.META.get('HTTP_REFERER'))
     except Exception as err:
         print(f'Other error occurred: {err}')
+        return redirect(request.META.get('HTTP_REFERER'))
     else:
-        info = []
-        for item in response.json():
-            post_id = item['id']
-            title = item['title']['rendered']
+        return redirect(request.META.get('HTTP_REFERER'))
 
-            categories = []
-            for category in item['categories']:
-                if category_global.get(category):
-                    categories.append(category_global.get(category))
-                else:
-                    category_result = requests.get(
-                        site.url + "/wp-json/wp/v2/categories/" + str(category),
-                        headers={'Content-Type': 'application/json'}
-                    )
-                    categories.append(category_result.json()["name"])
-                    category_global[category] = category_result.json()["name"]
 
-            tags = []
-            for tag in item['tags']:
-                if tag_global.get(tag):
-                    tags.append(tag_global.get(tag))
-                else:
-                    tag_result = requests.get(
-                        site.url + "/wp-json/wp/v2/tags/" + str(tag),
-                        headers={'Content-Type': 'application/json'}
-                    )
-                    tags.append(tag_result.json()["name"])
-                    tag_global[tag] = tag_result.json()["name"]
-
-            media = media_result = requests.get(
-                item['_links']['wp:featuredmedia'][0]['href'],
-                headers={'Content-Type': 'application/json'}
-            )
-
-            media = media.json()['guid']['rendered']
-            date = item['date']
-            author = ''
-
-            print(item)
-
-    return render(request, 'show.html', data)

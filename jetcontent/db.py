@@ -12,10 +12,10 @@ SQLITE = {
 POSTGRESQL = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'db',
-        'USER': 'postgresql',
-        'PASSWORD': '1234',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
+        'NAME': os.getenv('POSTGRES_DB'),
+        'USER': os.getenv('POSTGRES_USER'),
+        'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
+        'HOST': os.getenv('DB_HOST'),
+        'PORT': os.getenv('DB_PORT')
     }
 }

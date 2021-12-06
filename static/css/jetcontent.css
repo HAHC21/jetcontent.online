@@ -17,12 +17,12 @@ body {
 .jc-sites-wrapper {
     width: 60%;
     height: 100%;
-    margin: 20px auto;
+    margin: 40px auto;
 }
 
 .jc-sites-wrapper__site {
     display: grid;
-    grid-template-columns: repeat(auto-fill, 200px);
+    grid-template-columns: repeat(auto-fill, 160px);
     justify-content: space-between;
     grid-gap: 10px;
 }
@@ -32,7 +32,7 @@ body {
     height: 200px;
     width: 200px;
     border-radius: 5px;
-    border: 1px solid gray;
+    border: 1px solid rgba(0,0,0,0.2);
     display: flex;
     align-items: center;
     justify-content: center;

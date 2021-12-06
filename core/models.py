@@ -25,9 +25,14 @@ class Article(models.Model):
     Article
     """
     site = models.ForeignKey(Site, related_name='site', on_delete=models.CASCADE, blank=True, null=True)
-    title = models.CharField(max_length=150, verbose_name="Name", unique=True)
+    post_id = models.IntegerField(default=False, null=True)
+    author_id = models.IntegerField(default=False, null=True)
+    title = models.CharField(max_length=150, verbose_name="Name", unique=False)
     content = models.TextField()
-    url = models.CharField(max_length=150, verbose_name="URL")
+    url = models.CharField(max_length=255, verbose_name="URL")
+    image = models.CharField(max_length=255, verbose_name="URL", blank=True, null=True)
+    tags = models.CharField(max_length=255, verbose_name="Tags", blank=True, null=True)
+    categories = models.CharField(max_length=255, verbose_name="Categories", blank=True, null=True)
 
     def __str__(self):
         return self.title
@@ -37,3 +42,23 @@ class Article(models.Model):
         verbose_name_plural = 'Articles'
         db_table = "core_articles"
         ordering = ['title']
+
+
+class Status(models.Model):
+    """
+    Status Model
+    """
+
+    STATUS = (
+        ('IDLE', 'Idle'),
+        ('IMPORTING', 'Importing'),
+    )
+
+    name = models.CharField(choices=STATUS, max_length=254, blank=True, default='Idle')
+
+    class Meta:
+        db_table = "status"
+        ordering = ("name",)
+
+    def __str__(self):
+        return str(self.name)

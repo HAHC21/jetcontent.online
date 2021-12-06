@@ -2,3 +2,5 @@ db.sqlite3
 *.pyc
 .envs
 .idea
+docker-compose/postgres/db_data/*
+core/migrations/*
