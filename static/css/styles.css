@@ -1,0 +1,131 @@
+/* Generic styles */
+
+body {
+    margin:0px;
+}
+
+.index-container {
+    margin:auto;
+    width:85%;
+    text-align: center;
+}
+
+/* Home styles */
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 33.3% 33.3% 33.3%;
+    background-color: white;
+    padding: 10px;
+}
+
+
+.home-container {
+    margin:auto;
+    width:800px;
+}
+
+.grid-item {
+    background-color: none;
+    border: 1px solid #ccc;
+    border-radius:5px;
+    padding: 10px;
+    margin:20px;
+}
+
+.home-item {
+    text-align: center;
+    height:100px;
+    padding:20px;
+    line-height:100px;
+}
+
+.grid-item img {
+    width:150px;
+    vertical-align: middle;
+}
+
+/* Index Page */
+
+.index-menu {
+    width:300px;
+    /* background: rgb(228,228,228); */
+    background: linear-gradient(180deg, rgba(228,228,228,1) 0%, rgba(255,255,255,1) 100%, rgba(255,255,255,1) 100%);
+    position: -webkit-sticky;
+    position: sticky; 
+    padding-top:10px;
+    padding-bottom: 30px;
+    top: 0;
+    text-align: center;
+}
+
+.index-item {
+    padding-top:10px;
+    padding-bottom: 10px;
+    min-height: 40px;
+}
+
+.index-item img {
+    vertical-align: middle;
+}
+
+.index-content {
+    position:absolute;
+    margin-left:350px;
+    margin-top:50px;
+}
+
+.table-title {
+    font-family: 'Helvetica';
+    font-size: 18px;
+    line-height:26px;
+}
+
+.index-table {
+    font-family: 'Arial';
+    padding:0px;
+    border-spacing: 0px;
+}
+
+.index-table td {
+    padding:0px;
+}
+
+.index-table th {
+    padding:10px;
+    font-size: 13px;
+}
+
+.position-head, .link-head {
+    background-color: #073763;
+    color:white;
+    text-align: left;
+}
+
+.sessions-head {
+    background-color: #1c4587;
+    color:white;
+}
+
+.adsense-head {
+    background-color: #783f04;
+    color:white;
+}
+
+.medianet-head {
+    background-color: #660000;
+    color:white;
+}
+
+.index-table td {
+    padding:5px;
+}
+
+.adsense-row, .sessions-row, .medianet-row {
+    text-align:right;
+    font-family: 'Arial';
+}
+
+.adsense-row, .sessions-row, .medianet-row, .position-row, .link-row {
+    font-size: 12px;
+}

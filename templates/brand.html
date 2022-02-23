@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+{{ brand }}
+{% endblock %}
+
+{% block body %}
+    <div>
+        <h1>Categories</h1>
+        <br/>
+            <ul>
+                {% for cat in cats %}
+                    <li>
+                        <a href="/analytics/category/{{ cat }}/{{ brand }}">{{ cat }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        <br/>
+        <h1>Tags</h1>
+            <ul>
+                {% for tag in tags %}
+                    <li>
+                        <a href="/analytics/tag/{{ tag }}/{{ brand }}">{{ tag }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+    </div>
+{% endblock %}

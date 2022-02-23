@@ -1,0 +1,75 @@
+{
+    "mammothawards.com" : {
+        "shortname": "mammothawards.com",
+        "url": "https://www.mammothawards.com",
+        "image": "/static/images/ma-logo.png",
+        "background": "#202637"
+        },
+        
+    "happyhomeinsider.com" : {
+        "shortname": "happyhomeinsider.com",
+        "url": "https://www.happyhomeinsider.com",
+        "image": "/static/images/hhi-logo.png",
+        "background": "white"
+        },
+    "goodnesting.com" : {
+        "shortname": "goodnesting.com",
+        "url": "https://www.goodnesting.com",
+        "image": "/static/images/gn-logo.png",
+        "background": "white"
+        },
+    "americanhoperesources.com" : {
+        "shortname": "americanhoperesources.com",
+        "url": "https://www.americanhoperesources.com",
+        "image": "/static/images/ahr-logo.png",
+        "background": "white"
+        },
+    "spaoa.org" : {
+        "shortname": "spaoa.org",
+        "url": "https://www.spaoa.org",
+        "image": "/static/images/spaoa-logo.png",
+        "background": "white"
+        },
+    "unitedfamilynetwork.com" : {
+        "shortname": "unitedfamilynetwork.com",
+        "url": "https://www.unitedfamilynetwork.com",
+        "image": "/static/images/ufn-logo.png",
+        "background": "white"
+        },
+    "hardshiprecovery.com" : {
+        "shortname": "hardshiprecovery.com",
+        "url": "https://www.hardshiprecovery.com",
+        "image": "/static/images/hr-logo.png",
+        "background": "white"
+        },
+    "housing-relief.com" : {
+        "shortname": "housing-relief.com",
+        "url": "https://www.housing-relief.com",
+        "image": "static/images/horef-logo.png",
+        "background": "white"
+        },
+    "section8assist.com" : {
+        "shortname": "section8assist.com",
+        "url": "https://www.section8assist.com",
+        "image": "/static/images/s8-logo.png",
+        "background": "#04344d"
+        },
+    "healthiersupply.com" : {
+        "shortname": "healthiersupply.com",
+        "url": "https://www.healthiersupply.com",
+        "image": "static/images/hs-logo.png",
+        "background": "white"
+        },
+    "holidayrelief.com" : {
+        "shortname": "holidayrelief.com",
+        "url": "https://www.holidayrelief.com",
+        "image": "static/images/holref-logo.png",
+        "background": "white"
+        },
+    "smarterseniorliving.com" : {
+        "shortname": "smarterseniorliving.com",
+        "url": "https://www.smarterseniorliving.com",
+        "image": "static/images/ssl-logo.png",
+        "background": "white"
+        }
+}

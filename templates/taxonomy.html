@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block body %}
+    <h1> {{ title }} </h1>
+    <table>
+        <tr>
+            <th>id</th>
+            <th>date</th>
+            <th>title</th>
+            <th>slug</th>
+            <th>excerpt</th>
+            <th>link</th>
+        </tr>
+        {% for post in posts %}
+        <tr>
+            <td>{{ post['id'] }}</td>
+            <td>{{ post['date'] }}</td>
+            <td>{{ post['title']['rendered'] }}</td>
+            <td>{{ post['slug'] }}</td>
+            <td>{{ post['excerpt']['rendered'] }}</td>
+            <td><a href="{{ post['link'] }}">link</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    TEST
+{% endblock %}
+
+{% block body %}
+    <h1>Categories</h1>
+        {% for cat in cats %}
+        <h2>{{ cat }}</h2>
+        {% endfor %}
+    <h1>Tags</h1>
+        {% for tag in tags %}
+        <h2>{{ tag }}</h2>
+        {% endfor %}
+{% endblock %}

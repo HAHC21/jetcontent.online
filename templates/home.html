@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Jet Content Platform
+{% endblock %}
+
+{% block body %}
+    <div id="grid_container" class="grid-container home-container">
+        {% for row in data %}
+        <a href="/analytics/brand/{{ row['shortname'] }}">
+            <div 
+                class="grid-item home-item" 
+                style="background-color: {{ row['background'] }};"
+            >
+                <img src="{{ row['image'] }}">
+            </div>
+        </a>
+        {% endfor  %}
+    </div>
+{% endblock %}

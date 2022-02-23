@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <title>
+        {% block title %}
+        {% endblock %}
+    </title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+    {% block bootstrap %}{% endblock %}
+    <link rel="stylesheet" href="/static/css/styles.css/?rand=1013">
+</head>
+<header style="z-index:3; background-color: #262626; position: -webkit-sticky; position: sticky; top: 0; width:100%; border-bottom: 1px solid #6d9e5d; text-align:left;">
+    <div class="index-container">
+        <a id="home_jet" href="/">
+            <img src="/static/images/JetLogo.png" height="40px" width="40px" style="margin:10px;">
+        </a>
+    </div>
+</header>
+<body style="z-index:0;">
+{% block body %}
+{% endblock %}
+
+</body>
+</html>
